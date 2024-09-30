@@ -5,6 +5,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom'; 
 
+import './../styles/appBar.css';
+
 const NavBar = () => {
     const navigate = useNavigate();
 
@@ -15,9 +17,10 @@ const NavBar = () => {
     };
 
     return(
-        <AppBar position='static'>
-            <Toolbar>
+        <AppBar position='static' style={{ margin: 0, padding: 0 }}>
+            <Toolbar className="sidebar">
                 <Typography variant='h6' sx={{flexgrow:1}}>Menu</Typography>
+                <Button color='inherints' onClick={() => navigate('/dashboard')}>Inicio</Button>
                 <Button color='inherints' onClick={() => navigate('/profile')}>Perfil</Button>
                 <Button color='inherints' onClick={() => navigate('/amigos')}>Amigos</Button>
                 <Button color='inherints' onClick={() => navigate('/mensajes')}>Mensajes</Button>
